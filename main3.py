@@ -37,7 +37,6 @@ def clean_text(text):
     
     return " ".join(words)
 
-
 def analyze_sentiment(text):
     analysis = TextBlob(text)
     polarity = analysis.sentiment.polarity
@@ -70,7 +69,6 @@ if uploaded_file is not None:
             sentiment_counts = df['sentiment'].value_counts()
             st.bar_chart(sentiment_counts)
 
-
             #Option to download the updated CSV
             st.download_button(
                 label="Download updated CSV",
@@ -78,7 +76,6 @@ if uploaded_file is not None:
                 file_name='sentiment_analyzed_data.csv',
                 mime='text/csv',
             )
-
 
     except Exception as e:
         st.error(f"An error occurred: {e}")
